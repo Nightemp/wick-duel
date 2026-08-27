@@ -1,4 +1,4 @@
-# wick-duel
+
 # WICK DUEL
 
 3D-дуэль на пистолетах с глушителем от первого лица для Telegram Mini App.
