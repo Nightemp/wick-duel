@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>WICK DUEL</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="menu">
+    <h1>WICK DUEL</h1>
+    <div class="stats">
+      <span id="onlineCount">Онлайн: 0</span>
+      <span id="playedCount">Сыграно дуэлей: 0</span>
+    </div>
+
+    <div class="menuBlock">
+      <h3>Против бота</h3>
+      <div class="diffRow">
+        <button class="diffBtn" data-diff="easy">Лёгкий</button>
+        <button class="diffBtn" data-diff="medium">Средний</button>
+        <button class="diffBtn" data-diff="hard">Сложный</button>
+      </div>
+    </div>
+
+    <div class="menuBlock">
+      <h3>Онлайн 1 на 1</h3>
+      <button id="findMatchBtn">Найти соперника</button>
+      <div id="searching" class="hidden">Поиск соперника...</div>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div id="healthBars">
+      <div class="healthWrap">
+        <div class="label">ВЫ</div>
+        <div class="hpBar"><div id="myHp" class="hpFill"></div></div>
+      </div>
+      <div class="healthWrap">
+        <div class="label">ПРОТИВНИК</div>
+        <div class="hpBar"><div id="enemyHp" class="hpFill"></div></div>
+      </div>
+    </div>
+    <div id="crosshair">+</div>
+    <button id="fireBtn">ОГОНЬ</button>
+  </div>
+
+  <div id="resultScreen" class="hidden">
+    <div id="resultText"></div>
+    <button id="backToMenuBtn">В меню</button>
+  </div>
+
+  <canvas id="scene"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
